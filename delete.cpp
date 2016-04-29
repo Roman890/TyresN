@@ -9,7 +9,6 @@ void ListTyre::Delet()
 
 {// эта функция удаляет элементы 
 	int i;
-	bool n = 1;
 	std::cout << "\t По какому признаку будем удалять элемент списка? \n";
 	std::cout << "1 : Удаление по марке шины\n";
 	std::cout << "2 : Удаление по цене шины\n";
@@ -26,14 +25,11 @@ void ListTyre::Delet()
 		Tyre* p = start;
 		if (strcmp(m, p->GetMarka()) == 0)   // удаляется первый элемент списка
 		{
-			//		start = p;									// указатель на 1 элемент
 			if (p->GetNext() != NULL)		        // Первый элемент - не единственный
 				first_elem = p->GetNext();
 			else
 				first_elem = NULL;       // список будет пустой
 			delete[]p->GetMarka();       // освобождаем память
-			//delete p;                    // которую занимал первый элемент
-			n = 1;
 			return;
 		}
 		else if (p->GetNext() == NULL)// список состоит из одного элемента
@@ -47,29 +43,20 @@ void ListTyre::Delet()
 			{// p указывает на звено предшествующее удаляемому, удалется не последнее звено 
 				start = p->GetNext()->GetNext();		// запоминаем указатель на следующее за удаляемым звеном
 				char* pdm = p->GetNext()->GetMarka();
-				delete[]pdm;		// удаление строки с именем
+				delete[]pdm;	
 				Tyre* pdelel = p->GetNext();
-				//				delete pdelel;					// удаление самого элемента списка 
 				p->SetNext(start);
 				return;										// выход из цикла  и функции 
 			}
 			start = p;
 			p = p->GetNext();
-			n = 1;
 		}
 		// проверка последнего звена
 		if ((strcmp(m, p->GetMarka()) == 0))// надо удалить последнее звено
 		{
 			delete[](p->GetMarka()); // Удаление строки с маркой машины
-			//delete p;
 			start->SetNext(NULL);
-			n = 1;
 			return;
-		}
-		else{
-			if (n == 1)
-				std::cout << "Ничего не удалилось!!!" << std::endl;
-			break;
 		}
 	}
 	case 2:// удаление по цене
@@ -87,8 +74,6 @@ void ListTyre::Delet()
 			else
 				first_elem = NULL;       // список будет пустой
 			delete[]p->GetMarka();       // освобождаем память
-		//	delete p;                    // которую занимал первый элемент
-			n = 1;
 			return;
 		}
 		else if (p->GetNext() == NULL)// список состоит из одного элемента
@@ -102,29 +87,20 @@ void ListTyre::Delet()
 			{// p указывает на звено предшествующее удаляемому, удалется не последнее звено 
 				start = p->GetNext()->GetNext();		// запоминаем указатель на следующее за удаляемым звеном
 				char* pdm = p->GetNext()->GetMarka();
-				delete[]pdm;		// удаление строки с именем
+				delete[]pdm;	
 				Tyre* pdelel = p->GetNext();
-				//				delete pdelel;					// удаление самого элемента списка 
 				p->SetNext(start);
 				return;										// выход из цикла  и функции 
 			}
 			start = p;
 			p = p->GetNext();
-			n = 1;
 		}
 		// проверка последнего звена
 		if (pr == p->GetPrice())// надо удалить последнее звено
 		{
-			delete[](p->GetMarka()); // Удаление строки с маркой машины
-			//delete p;
+			delete[](p->GetMarka());
 			start->SetNext(NULL);
-			n = 1;
 			return;
-		}
-		else{
-			if (n == 1)
-				std::cout << "Ничего не удалилось!!!" << std::endl;
-			break;
 		}
 	}
 	default:
