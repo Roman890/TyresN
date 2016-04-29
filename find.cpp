@@ -13,7 +13,6 @@ void ListTyre::FindBD()
 	char m[30];
 	float pr, sh, dm, vis;
 	int w;
-	bool n = 0;
 	std::cout << "\t По какому признаку будем искать? \n";
 	std::cout << "1 : Поиск по марке шины\n";
 	std::cout << "2 : Поиск по цене шины\n";
@@ -37,14 +36,8 @@ void ListTyre::FindBD()
 			{
 
 				std::cout << std::endl << p->GetMarka() << " \t" << p->GetPrice() << " \t\t"
-					<< p->GetVisota_profila() << " \t" << p->GetDiam() << " \t\t"
+					<< p->GetShirina_Profila() << " \t" << p->GetDiam() << " \t\t"
 					<< p->GetVisota_profila() << " \t\t" << p->GetWinter() << std::endl;
-				n = 1;
-			}
-			else {
-				if (n == 0)
-					std::cout << "Ничего не нашлось" << std::endl;
-				break;
 			}
 			if (p->GetNext() == NULL)
 				break;
@@ -64,13 +57,8 @@ void ListTyre::FindBD()
 			if (p->GetPrice() == pr)
 			{
 				std::cout << std::endl << p->GetMarka() << " \t" << p->GetPrice() << " \t\t"
-					<< p->GetVisota_profila() << " \t" << p->GetDiam() << " \t\t"
+					<< p->GetShirina_Profila() << " \t" << p->GetDiam() << " \t\t"
 					<< p->GetVisota_profila() << " \t\t" << p->GetWinter() << std::endl;
-			}
-			else {
-				if (n == 0)
-					std::cout << "Ничего не нашлось" << std::endl;
-				break;
 			}
 			if (p->GetNext() == NULL)
 				break;
@@ -89,13 +77,8 @@ void ListTyre::FindBD()
 			if (p->GetShirina_Profila() == sh)
 			{
 				std::cout << std::endl << p->GetMarka() << " \t" << p->GetPrice() << " \t\t"
-					<< p->GetVisota_profila() << " \t" << p->GetDiam() << " \t\t"
+					<< p->GetShirina_Profila() << " \t" << p->GetDiam() << " \t\t"
 					<< p->GetVisota_profila() << " \t\t" << p->GetWinter() << std::endl;
-			}
-			else {
-				if (n == 0)
-					std::cout << "Ничего не нашлось" << std::endl;
-				break;
 			}
 			if (p->GetNext() == NULL)
 				break;
@@ -114,13 +97,8 @@ void ListTyre::FindBD()
 			if (p->GetDiam() == dm)
 			{
 				std::cout << std::endl << p->GetMarka() << " \t" << p->GetPrice() << " \t\t"
-					<< p->GetVisota_profila() << " \t" << p->GetDiam() << " \t\t"
+					<< p->GetShirina_Profila() << " \t" << p->GetDiam() << " \t\t"
 					<< p->GetVisota_profila() << " \t\t" << p->GetWinter() << std::endl;
-			}
-			else {
-				if (n == 0)
-					std::cout << "Ничего не нашлось" << std::endl;
-				break;
 			}
 			if (p->GetNext() == NULL)
 				break;
@@ -139,13 +117,8 @@ void ListTyre::FindBD()
 			if (p->GetVisota_profila() == vis)
 			{
 				std::cout << std::endl << p->GetMarka() << " \t" << p->GetPrice() << " \t\t"
-					<< p->GetVisota_profila() << " \t" << p->GetDiam() << " \t\t"
+					<< p->GetShirina_Profila() << " \t" << p->GetDiam() << " \t\t"
 					<< p->GetVisota_profila() << " \t\t" << p->GetWinter() << std::endl;
-			}
-			else {
-				if (n == 0)
-					std::cout << "Ничего не нашлось" << std::endl;
-				break;
 			}
 			if (p->GetNext() == NULL)
 				break;
@@ -164,13 +137,8 @@ void ListTyre::FindBD()
 			if (p->GetWinter() == w)
 			{
 				std::cout << std::endl << p->GetMarka() << " \t" << p->GetPrice() << " \t\t"
-					<< p->GetVisota_profila() << " \t" << p->GetDiam() << " \t\t"
+					<< p->GetShirina_Profila() << " \t" << p->GetDiam() << " \t\t"
 					<< p->GetVisota_profila() << " \t\t" << p->GetWinter() << std::endl;
-			}
-			else {
-				if (n == 0)
-					std::cout << "Ничего не нашлось" << std::endl;
-				break;
 			}
 			if (p->GetNext() == NULL)
 				break;
